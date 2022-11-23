@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 style="text-align: center ;">CSS interview preparation Day 2</h1>
+    <p>
+    <h3>1. What is box-sizing?</h3>
+    Box-sizing property defines how the width and height gets applied on an element.
+    Default value of box-sizing is content-box, in this case the actual width of the box
+    will be equal to the border and padding and width of the box ( Actual width : width
+    + border + padding ).
+    In case when box-sizing is set to be border-box, then the actual width will be equal
+    to the width of the box itself. Means if we will increase the padding or border of
+    the box then it will not increase the width of the box.
+    <pre>
+        a) content-box (Default)
+        b) border-box
+
+    HTML:-
+        < div class="content-box">Content box< /div>
+        < br>
+        < div class="border-box">Border box< /div>
+    
+    CSS:-
+        div {
+        width: 160px;
+        height: 80px;
+        padding: 20px;
+        border: 8px solid rgb(47, 0, 255);
+        background: rgb(240, 240, 95);
+        }
+        .content-box{
+        box-sizing: content-box;
+        }
+        .border-box {
+        box-sizing: border-box;
+        }
+
+    Output:- 
+    <div class="content-box">Content box</div>
+    <br>
+    <div class="border-box">Border box</div>    
+    </pre>
+
+    <hr>
+    <h3>2. What is animation-delay?</h3>
+    It is a sub-property of CSS animation. It defines how long the animation has to
+    wait before starting. Using the animation-delay property, you define the delay by
+    specifying the number of seconds or milliseconds it should take before playing.
+
+    <pre>
+        HTML:-
+            < div class="animation">< /div>
+        
+        CSS:-
+            .animation {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            animation: moving 5s infinite;
+            animation-delay: 3s;
+            }
+            @keyframes moving {
+            from {left: 0px;}
+            to {left: 200px;}
+            }
+        
+        output:
+        <div class="animation"></div>
+    </pre>
+    <hr>
+    <h3>3. Which property will you use to merge cells horizontally in a grid?</h3>
+    grid-column-start and grid-column-end property can be used to merge cells
+    vertically. It also has a shorthand i.e., grid-column: start/end. If you want to merge
+    two elements in row then we will have to use grid-row property inside the child
+    element. Remember these properties are applicable only to child elements not to
+    parent elements.
+    <pre>
+        HTML:-
+            < div class="grid-container">
+            < div class="item item1">1< /div>
+            < div class="item">2< /div>
+            < div class="item">3< /div>
+            < div class="item">4< /div>
+            < div class="item">5< /div>
+            < div class="item">6< /div>
+            < /div>
+        
+        CSS:-
+        .grid-container {
+            display: grid;
+            height: auto;
+            width: fit-content;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto auto auto;
+            grid-gap: 15px;
+            background-color: #2196F3;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .item {
+            height: 10px;
+            border: #2196F3;
+            border-radius: 20px;    
+        }
+        
+        .item1 {
+            width: auto;
+        
+            grid-column: 1/3;
+            grid-row: 1/2;
+        }
+
+        Output:-
+
+    </pre>
+    <div class="grid-container">
+        <div class="item item1">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+ 
+    </div>
+
+<hr>
+<h3>4. Which property will you use to merge cells horizontally in a grid?</h3>
+grid-row-start and grid-row-end property can be used to merge cells horizontally. It
+also has a shorthand i.e., grid-row: grid-row-start/grid-row-end;
+
+<hr>
+<h3> 5. What is a Box-model?</h3>
+The box model in CSS is a set of rules that determine how your web page is
+rendered on the internet. In this model, a rectangular box is generated for HTML
+elements. This box consists of first content, then padding, then border, and finally
+margin.
+<hr>
+<h3>6. What is the difference between display none and visibility hidden?</h3>
+<b>display: none;</b>
+<pre>
+    ● The display: none property is used to hide elements without deleting them. It
+does not take up any space.
+● In this case, the tag is removed from the page, which allows other elements
+to fill in.
+</pre>
+<b>visibility: hidden;</b>
+<pre>
+    
+● The visibility: hidden property also hides an element, but affects the layout
+i.e., it takes up the space.
+● The element is hidden from view but not the page flow.
+</pre>
+    </p>
+
+</body>
+
+</html>
